@@ -22,7 +22,7 @@ const Home: NextPage = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center pt-4">
+      <main className="flex flex-col items-center pt-4 m-auto w-[500px] md:w-auto  ">
         <h1 className="text-3xl pt-4">Guest Book</h1>
         <p className="mt-4 text-lg">
           Created with <code>create-t3-app</code>
