@@ -10,7 +10,7 @@ const Home: NextPage = (props) => {
   if (status === "loading") {
     return (
       <main>
-        <p>"...Loading"</p>
+        <p>...Loading</p>
       </main>
     );
   }
