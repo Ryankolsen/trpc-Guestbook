@@ -14,7 +14,6 @@ const PostMessage = () => {
     register,
     handleSubmit,
     reset,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
   const postMessage = trpc.useMutation("guestbookpostMessage", {
