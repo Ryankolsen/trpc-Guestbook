@@ -7,11 +7,14 @@ const Messages = () => {
 
   return (
     <div className="flex flex-col gap-4 pt-4">
-      <h1>Messages</h1>
+      <h1 className="text-2xl">Messages</h1>
       {messages?.map((msg, index) => {
         return (
-          <div key={index}>
-            <p>{msg.name}</p>
+          <div
+            className="rounded-md bg-slate-00 border px-4 py-2 border-violet-500"
+            key={index}
+          >
+            <p className="w-48 mx-auto mb-5">{msg.name} posted:</p>
             <p>{msg.message}</p>
           </div>
         );
