@@ -6,9 +6,13 @@ import PostMessage from "../components/postMessage";
 
 const Home: NextPage = (props) => {
   const { data: session, status } = useSession();
-
+  console.log(props);
   if (status === "loading") {
-    return <main>"...Loading"</main>;
+    return (
+      <main>
+        <p>"...Loading"</p>
+      </main>
+    );
   }
   return (
     <>
