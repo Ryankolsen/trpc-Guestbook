@@ -20,7 +20,7 @@ const PostMessage = () => {
   const postMessage = trpc.useMutation("guestbookpostMessage", {
     onMutate: () => {
       ctx.cancelQuery(["guestbookgetAll"]);
-      let optimisticUpdate = ctx.getQueryData(["guestbookgetAll"]);
+      const optimisticUpdate = ctx.getQueryData(["guestbookgetAll"]);
       if (optimisticUpdate) {
         ctx.setQueryData(["guestbookgetAll"], optimisticUpdate);
       }
