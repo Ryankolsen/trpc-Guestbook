@@ -14,7 +14,6 @@ const PostMessage = () => {
     register,
     handleSubmit,
     reset,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
   const postMessage = trpc.useMutation("guestbookpostMessage", {
@@ -51,7 +50,7 @@ const PostMessage = () => {
           type="submit"
           className="p-2 rounded-md border-2 border-zinc-800 focus:outline-none"
         >
-          Submit
+          Submit Now
         </button>
       </form>
     </>
