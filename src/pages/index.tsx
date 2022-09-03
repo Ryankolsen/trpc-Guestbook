@@ -30,7 +30,7 @@ const Home: NextPage = (props) => {
 
         {session ? (
           <div className="pt-10">
-            <p>'Ello {session.user?.name}</p>
+            <p>Hello there {session.user?.name}</p>
 
             <button onClick={() => signOut()}>Logout</button>
             <div>
