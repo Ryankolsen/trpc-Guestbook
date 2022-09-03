@@ -1,4 +1,4 @@
-This is a guestbook created with the T3 stack: TypeScript NextJs, tRPC, Prisma, Tailwind
+This is a guestbook created with the T3 stack: TypeScript NextJs, tRPC, Prisma, PostgreSQL, Tailwind
 
 Here is some info about the T3 App:
 
