@@ -11,7 +11,7 @@ const Messages = () => {
       {messages?.map((msg, index) => {
         return (
           <div
-            className="rounded-md bg-slate-00 border px-4 py-2 border-violet-500"
+            className="rounded-md  border px-4 py-2 border-violet-500"
             key={index}
           >
             <p className="w-48 mx-auto mb-5">{msg.name} posted:</p>
