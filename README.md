@@ -1,3 +1,7 @@
+This is a guestbook created with the T3 stack: TypeScript NextJs, tRPC, Prisma, Tailwind
+
+Here is some info about the T3 App:
+
 # Create T3 App
 
 This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack.
