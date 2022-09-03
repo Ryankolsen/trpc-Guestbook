@@ -8,7 +8,7 @@ type Inputs = {
 
 const PostMessage = () => {
   const ctx = trpc.useContext();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   const {
     register,
@@ -35,6 +35,9 @@ const PostMessage = () => {
         message: data.message,
       });
       reset();
+    }
+    if (errors) {
+      console.log(errors.message);
     }
   };
   return (
