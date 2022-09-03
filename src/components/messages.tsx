@@ -14,7 +14,7 @@ const Messages = () => {
             className="rounded-md  border px-4 py-2 border-violet-500"
             key={index}
           >
-            <p className="w-48 mx-auto mb-5">{msg.name} posted:</p>
+            <p className=" mb-2">{msg.name} posted:</p>
             <p>{msg.message}</p>
           </div>
         );
