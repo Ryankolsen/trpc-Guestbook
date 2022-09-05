@@ -3,10 +3,12 @@ import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Messages from "../components/messages";
 import PostMessage from "../components/postMessage";
+import EditMessage from "../components/editMessage";
+import { useState } from "react";
 
 const Home: NextPage = (props) => {
   const { data: session, status } = useSession();
-  console.log(props);
+  const [messageId, setMessageId] = useState("");
   if (status === "loading") {
     return (
       <main>
@@ -43,11 +45,20 @@ const Home: NextPage = (props) => {
                 Logout
               </button>
             </div>
+            {session.user?.name && messageId ? (
+              <div>
+                <EditMessage
+                  setMessageId={setMessageId}
+                  messageId={messageId}
+                />
+              </div>
+            ) : null}
+
             <div className="pt-16">
               <PostMessage />
             </div>
             <div className="pt-12">
-              <Messages />
+              <Messages setMessageId={setMessageId} />
             </div>
           </div>
         ) : (
