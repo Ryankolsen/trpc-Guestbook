@@ -1,5 +1,6 @@
 import { trpc } from "../utils/trpc";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 type Inputs = {
   setMessageId: React.Dispatch<React.SetStateAction<string>>;
@@ -20,12 +21,21 @@ const Messages = ({ setMessageId }: Inputs) => {
       {messages?.map((msg, index) => {
         return (
           <div
-            className="rounded-md flex  border px-4 py-2 border-violet-500"
+            className="rounded-md flex  border px-4 py-2 border-violet-500 "
             key={index}
           >
-            <div className=" w-[400px]">
-              <p className=" mb-2">{msg.name} posted:</p>
-              <p>{msg.message}</p>
+            <div className="w-[400px]">
+              <p className=" mb-2">
+                <Link href={`/users/${msg.name}`}>
+                  <a> {msg.name}</a>
+                </Link>{" "}
+                posted:
+              </p>
+
+              <p>
+                {" "}
+                <a>{msg.message} </a>
+              </p>
             </div>
             <div className=" w-auto flex self-end">
               {session?.user?.name === msg.name ? (

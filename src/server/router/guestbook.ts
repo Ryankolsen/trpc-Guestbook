@@ -42,6 +42,29 @@ export const guestBookRouter = createRouter()
     },
   })
 
+  .query("getPostsByAuthor", {
+    input: z.object({
+      userName: z.string(),
+    }),
+    async resolve({ ctx, input }) {
+      const { userName } = input;
+      try {
+        return await ctx.prisma.guestbook.findMany({
+          select: {
+            name: true,
+            message: true,
+            id: true,
+          },
+          where: {
+            name: userName,
+          },
+        });
+      } catch (error) {
+        console.error(`Error getPostsByAuthor ${error}`);
+      }
+    },
+  })
+
   .middleware(async ({ ctx, next }) => {
     if (!ctx.session) {
       throw new TRPCError({ code: "UNAUTHORIZED" });

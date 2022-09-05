@@ -25,11 +25,6 @@ const Home: NextPage = (props) => {
       </Head>
 
       <main className="flex flex-col items-center pt-4 m-auto w-[500px] md:w-auto  ">
-        <h1 className="text-3xl pt-4">Guest Book</h1>
-        <p className="mt-4 text-lg">
-          Created with <code>create-t3-app</code>
-        </p>
-
         {session ? (
           <div className="py-10">
             <div className="flex flex-col items-center">
