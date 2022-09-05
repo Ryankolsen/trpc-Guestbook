@@ -57,8 +57,8 @@ const EditMessage = ({ messageId, setMessageId }: ComponentInputs) => {
 
   return (
     <div>
-      <h1>Edit This Post</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <h1 className="py-2 text-xl">Edit This Post</h1>
+      <form className="flex justify-around" onSubmit={handleSubmit(onSubmit)}>
         <textarea
           className="px-4 py-2 w-96 border border-violet-700 rounded-md border-2 border-zinc-800 bg-neutral-900 focus:outline-none "
           {...register("messageContent", { required: true, maxLength: 100 })}
@@ -67,7 +67,12 @@ const EditMessage = ({ messageId, setMessageId }: ComponentInputs) => {
         {errors.messageContent && (
           <p>Error, please try again {errors.messageContent.message}</p>
         )}
-        <button type="submit">Revise</button>
+        <button
+          className="m:h-12 my-auto ml-5 p-2 bg-zinc-800 rounded-md border-2 border-violet-700 focus:outline-none"
+          type="submit"
+        >
+          Revise
+        </button>
       </form>
     </div>
   );

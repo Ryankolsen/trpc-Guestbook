@@ -54,7 +54,7 @@ const PostMessage = () => {
           type="submit"
           className="m:h-12 my-auto ml-5 p-2 bg-zinc-800 rounded-md border-2 border-violet-700 focus:outline-none"
         >
-          Submit Now
+          Submit
         </button>
       </form>
     </div>
