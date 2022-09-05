@@ -1,6 +1,13 @@
 This is a guestbook created with the T3 stack: TypeScript NextJs, tRPC, Prisma, PostgreSQL, Tailwind
 
-Here is some info about the T3 App:
+Users can:
+-Sign in using Discord
+-Post a new message
+-Edit existing messages
+
+All created using tRPC and NextJS!
+
+Here is some info about the create-t3-app:
 
 # Create T3 App
 
