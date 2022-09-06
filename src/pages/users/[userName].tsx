@@ -2,6 +2,7 @@ import Error from "next/error";
 import { useRouter } from "next/router";
 import { trpc } from "../../utils/trpc";
 import type { NextPage } from "next";
+import Link from "next/link";
 
 const PostsByUser: NextPage = (props) => {
   const router = useRouter();
@@ -27,15 +28,13 @@ const PostsByUser: NextPage = (props) => {
   return (
     <div>
       <div className="p-4">
-        <h1 className=" text-xl">All Posts By: {userName}</h1>
-        <p className="mt-5">Total number of posts: {data.length}</p>
+        <h1 className=" text-xl">Posts By {userName}</h1>
+        <p className="mt-2">Total number of posts: {data.length}</p>
       </div>
-      <div className="sm:w-11/12 mx-auto">
-        <div className="text-4xl text-center mb-6 sm:max-w-[1000px]">
-          All Posts
-        </div>
+      <div className="sm:w-11/12 sm:mx-auto">
+        <div className="text-4xl text-center mb-6 ">All Posts</div>
         {data ? (
-          <div className="rounded-md   border px-4 py-2 border-violet-500 sm:max-w-[1000px]">
+          <div className="rounded-md   border px-4 py-2 border-violet-500 ">
             {data.map((msg) => (
               <div key={msg.id} className="p-4  ">
                 {" "}
@@ -45,6 +44,13 @@ const PostsByUser: NextPage = (props) => {
             ))}{" "}
           </div>
         ) : null}
+      </div>
+      <div className="pt-12 text-center">
+        <Link href={"/"}>
+          <button className="sm:h-12 my-auto ml-5 p-2 bg-zinc-800 rounded-md border-2 border-violet-700 focus:outline-none">
+            Home
+          </button>
+        </Link>
       </div>
     </div>
   );
