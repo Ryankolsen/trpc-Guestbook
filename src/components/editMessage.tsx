@@ -68,7 +68,7 @@ const EditMessage = ({ messageId, setMessageId }: ComponentInputs) => {
           <p>Error, please try again {errors.messageContent.message}</p>
         )}
         <button
-          className="m:h-12 my-auto ml-5 p-2 bg-zinc-800 rounded-md border-2 border-violet-700 focus:outline-none"
+          className="sm:h-12 my-auto ml-5 p-2 bg-zinc-800 rounded-md border-2 border-violet-700 focus:outline-none"
           type="submit"
         >
           Revise
