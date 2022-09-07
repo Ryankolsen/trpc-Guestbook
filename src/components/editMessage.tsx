@@ -1,6 +1,7 @@
 import { trpc } from "../utils/trpc";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 type FormInputs = {
   messageContent: string;
@@ -19,8 +20,13 @@ const EditMessage = ({ messageId, setMessageId }: ComponentInputs) => {
     register,
     handleSubmit,
     reset,
+    setFocus,
     formState: { errors },
   } = useForm<FormInputs>();
+
+  useEffect(() => {
+    setFocus("messageContent", { shouldSelect: true });
+  }, []);
 
   const postEdit = trpc.useMutation("guestbookeditPost", {
     onMutate: () => {

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { trpc } from "../utils/trpc";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useSession } from "next-auth/react";
@@ -16,6 +17,7 @@ const PostMessage = () => {
     reset,
     formState: { errors },
   } = useForm<Inputs>();
+
   const postMessage = trpc.useMutation("guestbookpostMessage", {
     onMutate: () => {
       ctx.cancelQuery(["guestbookgetAll"]);
@@ -40,6 +42,7 @@ const PostMessage = () => {
       console.log(errors.message);
     }
   };
+
   return (
     <div>
       <h1 className="py-2 text-xl">Post a Message</h1>
