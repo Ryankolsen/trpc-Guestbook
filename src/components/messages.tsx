@@ -37,9 +37,10 @@ const Messages = ({ setMessageId }: Inputs) => {
                 <a>{msg.message} </a>
               </p>
             </div>
-            <div className=" w-auto flex self-end">
+            <div className=" w-auto flex self-end pb-2">
               {session?.user?.name === msg.name ? (
                 <button
+                  className="sm:h-10 hover:bg-gray-900 my-auto ml-5 p-2 bg-zinc-800 rounded-md border-2 border-violet-700 focus:outline-none"
                   onClick={() => {
                     handleClick(msg.id);
                   }}
