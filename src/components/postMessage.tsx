@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { trpc } from "../utils/trpc";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useSession } from "next-auth/react";

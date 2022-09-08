@@ -19,7 +19,6 @@ const EditMessage = ({ messageId, setMessageId }: ComponentInputs) => {
     register,
     handleSubmit,
     reset,
-    getValues,
     formState: { errors },
   } = useForm<FormInputs>();
 
@@ -58,7 +57,6 @@ const EditMessage = ({ messageId, setMessageId }: ComponentInputs) => {
 
   const ctx = trpc.useContext();
   const { data: session } = useSession();
-  const values = getValues;
 
   if (isLoading) return <div>Fetching Messages</div>;
 
