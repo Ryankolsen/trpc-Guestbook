@@ -10,8 +10,12 @@ export const serverSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]),
   NEXTAUTH_SECRET: z.string(),
   NEXTAUTH_URL: z.string().url(),
+  // Discord
   DISCORD_CLIENT_ID: z.string(),
   DISCORD_CLIENT_SECRET: z.string(),
+  // Google
+  GOOGLE_CLIENT_ID: z.string(),
+  GOOGLE_CLIENT_SECRET: z.string(),
 });
 
 /**
