@@ -62,12 +62,22 @@ const Home: NextPage = (props) => {
           </div>
         ) : (
           <div className="pt-5">
-            <button
-              className="bg-violet-900  hover:bg-violet-800 hover:bg-violet-900 font-bold py-2 px-4 rounded-full"
-              onClick={() => signIn("discord")}
-            >
-              Sign In
-            </button>
+            <div>
+              <button
+                className="bg-violet-900  hover:bg-violet-800 hover:bg-violet-900 font-bold py-2 px-4 rounded-full"
+                onClick={() => signIn("discord")}
+              >
+                Sign In With Discord
+              </button>
+            </div>
+            <div className="pt-10">
+              <button
+                className="bg-violet-900  hover:bg-violet-800 hover:bg-violet-900 font-bold py-2 px-4 rounded-full"
+                onClick={() => signIn("google")}
+              >
+                Sign In With Google
+              </button>
+            </div>
           </div>
         )}
       </main>
